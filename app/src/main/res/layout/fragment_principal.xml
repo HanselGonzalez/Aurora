@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.Principal.PrincipalFragment">
+
+    <ScrollView
+        android:id="@+id/svPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <FrameLayout
+                android:id="@+id/flToolBar"
+                style="@style/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginHorizontal="55dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvToolBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ivInformation"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_information"
+                app:layout_constraintBottom_toBottomOf="@+id/flToolBar"
+                app:layout_constraintEnd_toStartOf="@id/flToolBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ivHelp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_help"
+                app:layout_constraintBottom_toBottomOf="@+id/flToolBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/flToolBar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/welcome"
+                android:textColor="@color/primaryT"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvPatologia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flToolBar"
+                tools:text="Buenos Dias Dr." />
+
+
+            <TextView
+                android:id="@+id/tvPatologia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/patologia"
+                android:textColor="@color/primaryT"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@id/cvPatologias"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMessage"
+                tools:text="Seleccione la patologia" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvPatologias"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="15dp"
+                app:layout_constraintBottom_toTopOf="@id/tvAnticonceptivos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPatologia"
+                app:strokeColor="@color/secondary"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spPatologia"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/tvAnticonceptivos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/metodos"
+                android:textColor="@color/primaryT"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@id/cvAnticonceptivos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvPatologias"
+                tools:text="Seleccione el metodo anticonceptivo" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvAnticonceptivos"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="15dp"
+                app:layout_constraintBottom_toTopOf="@id/cvReport"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAnticonceptivos"
+                app:strokeColor="@color/secondary"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spAnticonceptivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvReport"
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvAnticonceptivos"
+                app:strokeColor="@color/secondary"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivNum1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_num"
+                        app:layout_constraintBottom_toBottomOf="@id/tvA1"
+                        app:layout_constraintEnd_toStartOf="@+id/tvA1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvA1" />
+
+                    <TextView
+                        android:id="@+id/tvA1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|fill_horizontal"
+                        android:text="@string/method1"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvA2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivNum1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Anticonceptivos hormonales combinados - Píldora, parche, anillo, inyectable (AOC, PAC, AVC, AIC)" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNum2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_num"
+                        app:layout_constraintBottom_toBottomOf="@id/tvA2"
+                        app:layout_constraintEnd_toStartOf="@+id/tvA2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvA2" />
+
+                    <TextView
+                        android:id="@+id/tvA2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|fill_horizontal"
+                        android:text="@string/method2"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvA3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivNum2"
+                        app:layout_constraintTop_toBottomOf="@id/tvA1"
+                        tools:text="Anticonceptivos orales con progestágeno solo - AOPS" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNum3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_num"
+                        app:layout_constraintBottom_toBottomOf="@id/tvA3"
+                        app:layout_constraintEnd_toStartOf="@+id/tvA3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvA3" />
+
+                    <TextView
+                        android:id="@+id/tvA3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|fill_horizontal"
+                        android:text="@string/method3"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvA4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivNum3"
+                        app:layout_constraintTop_toBottomOf="@id/tvA2"
+                        tools:text="Anticonceptivos inyectables con progestágeno solo - AMPD (IM, SC)/EN-NET" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNum4"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_num"
+                        app:layout_constraintBottom_toBottomOf="@id/tvA4"
+                        app:layout_constraintEnd_toStartOf="@+id/tvA4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvA4" />
+
+                    <TextView
+                        android:id="@+id/tvA4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|fill_horizontal"
+                        android:text="@string/method4"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvA5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivNum4"
+                        app:layout_constraintTop_toBottomOf="@id/tvA3"
+                        tools:text="Implantes - LNG/ETG" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNum5"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_num"
+                        app:layout_constraintBottom_toBottomOf="@id/tvA5"
+                        app:layout_constraintEnd_toStartOf="@+id/tvA5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvA5" />
+
+                    <TextView
+                        android:id="@+id/tvA5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|fill_horizontal"
+                        android:text="@string/method5"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvA6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivNum5"
+                        app:layout_constraintTop_toBottomOf="@id/tvA4"
+                        tools:text="DIU liberador de levonorgestre - DIU-LNG" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNum6"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_num"
+                        app:layout_constraintBottom_toBottomOf="@id/tvA6"
+                        app:layout_constraintEnd_toStartOf="@+id/tvA6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvA6" />
+
+                    <TextView
+                        android:id="@+id/tvA6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|fill_horizontal"
+                        android:text="@string/method6"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivNum6"
+                        app:layout_constraintTop_toBottomOf="@id/tvA5"
+                        tools:text="DIU con cobre - DIU-Cu" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

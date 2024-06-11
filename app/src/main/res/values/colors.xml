@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="primary">#E1DFDF</color>
+    <color name="secondary">#1E9CD7</color>
+    <color name="tertiary">#001A7F</color>
+
+    <color name="primary_report">#02959F</color>
+    <color name="secondary_report">#0040FB</color>
+
+    <color name="primary_method">#022180</color>
+    <color name="secondary_method">#1A46CA</color>
+
+
+    <color name="primary_button">#A4A4A6</color>
+    <color name="secondary_button">#7D7D80</color>
+
+
+    <color name="primaryT">#0272CA</color>
+    <color name="secondaryT">#114B7A</color>
+    <color name="tertiaryT">#026E8F</color>
+
+
+    <color name="transparentText">#950376CF</color>
+
+    <color name="navBottomPrimary">#F5F6F8</color>
+    <color name="statusBar">#0A2073</color>
+
+
+    <color name="transparent">#00025697</color>
+
+
+
+
+
+</resources>

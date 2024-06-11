@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Aurora</string>
+
+    //NavBar
+    <string name="principal">Principal</string>
+    <string name="rueda">Rueda Interactiva</string>
+
+    //Principal
+    <string name="welcome">Buenos Dias Dr.</string>
+    <string name="patologia">Seleccione la patologia</string>
+    <string name="metodos">Seleccione el metodo anticonceptivo</string>
+    <string name="method1">Anticonceptivos hormonales combinados - Píldora, parche, anillo, inyectable (AOC, PAC, AVC, AIC)</string>
+    <string name="method2">Anticonceptivos orales con progestágeno solo - AOPS</string>
+    <string name="method3">Anticonceptivos inyectables con progestágeno solo - AMPD (IM, SC)/EN-NET</string>
+    <string name="method4">Implantes - LNG/ETG</string>
+    <string name="method5">DIU liberador de levonorgestre - DIU-LNG</string>
+    <string name="method6">DIU con cobre - DIU-Cu</string>
+    
+    
+    <string-array name="spPatologia">
+        <item>Hipertensión</item>
+        <item>Obesidad</item>
+        <item>Diabetes</item>
+        <item>Tabaquismo</item>
+        <item>Dolor de Cabeza</item>
+        <item>Medicamentos</item>
+        <item>VIH</item>
+        <item>Infecciones de Transmisión Sexual</item>
+        <item>EPI</item>
+        <item>Sepsis</item>
+        <item>Posparto y Lactancia</item>
+        <item>Nuliparidad</item>
+        <item>Adolescentes</item>
+        <item>Sangrado Vaginal</item>
+        <item>Fibromas Uterinos</item>
+        <item>Neoplasia Cervical</item>
+        <item>Cáncer Cervical</item>
+        <item>Cáncer de Mama</item>
+        <item>Enfermedades Hepáticas</item>
+        <item>Tromboembolismo Venenoso</item>
+        <item>Cardiopatías</item>
+
+    </string-array>
+
+
+    <string-array name="spObesidad">
+        <item>IMC ≥ 30 kg/m²</item>
+    </string-array>
+
+    <string-array name="spDiabetes">
+        <item>Actual</item>
+    </string-array>
+
+    <string-array name="spTabaquismo">
+        <item>Edad &lt; 35 </item>
+        <item>Edad ≥ 35</item>
+    </string-array>
+
+    <string-array name="spDolorCabeza">
+        <item>Sin Migraña</item>
+        <item>Migraña con Aura </item>
+    </string-array>
+
+    <string-array name="spMedicamentos">
+        <item>Determinados Anti-convulsivos</item>
+        <item>Rifampicina / Rifabutina</item>
+        <item>Terapia Antirretrovial</item>
+    </string-array>
+
+    <string-array name="spVih">
+        <item>Estadios 3 o 4 de la OMS</item>
+    </string-array>
+
+    <string-array name="spTransmisionSexual">
+        <item>Gonorrea, clamidia</item>
+        <item>Otras ITS y Vaginitis</item>
+        <item>Mayor riesgo de ITS</item>
+    </string-array>
+
+    <string-array name="spEpi">
+        <item>Actual</item>
+    </string-array>
+
+    <string-array name="spSepsis">
+        <item>Puerperal posterior al aborto</item>
+    </string-array>
+
+    <string-array name="spPosparto">
+        <item>&lt; 48 horas</item>
+        <item>48 horas a &lt; 4 semanas</item>
+        <item>4 semanas a &lt; 6 semanas</item>
+        <item>6 semanas a &lt; 6 meses</item>
+    </string-array>
+
+    <string-array name="spNuliparida">
+        <item></item>
+    </string-array>
+
+    <string-array name="spAdolescentes">
+        <item>Menarquia a &lt; 18 años</item>
+    </string-array>
+
+    <string-array name="spSangradoVaginal">
+        <item>Sin explicación</item>
+    </string-array>
+
+    <string-array name="spFibromasUterinos">
+        <item></item>
+    </string-array>
+
+    <string-array name="spNeoplasiaCervical">
+        <item></item>
+    </string-array>
+
+    <string-array name="spCancerCervical">
+        <item>Anterior al tratamiento</item>
+    </string-array>
+
+    <string-array name="spCancerMama">
+        <item>Actual</item>
+    </string-array>
+
+    <string-array name="spHepaticas">
+        <item>Tumor del hígado</item>
+        <item>Hepatitis aguda o exacerbación</item>
+    </string-array>
+
+    <string-array name="spTVenenoso">
+        <item>Antecedente</item>
+        <item>Agudo</item>
+        <item>Cirugía mayor con inmovilización prolongada</item>
+    </string-array>
+
+    <string-array name="spCardiopatias">
+        <item>Accidente Cerebrovascular</item>
+        <item>Cardiopatía Isquémica</item>
+        <item>Factores de riesgo múltiples</item>
+    </string-array>
+
+    <string-array name="spHipertension">
+        <item>140-159/90-99 o controlada</item>
+        <item>≥160 / ≥100</item>
+    </string-array>
+
+
+    //Rueda Fragment
+    <string name="option1">Use el método en cualquier circunstancia</string>
+    <string name="option2">En general, use el método</string>
+    <string name="option3">El uso del método generalmente no se recomienda a menos que otros métodos más adecuados no estén disponibles o no sean aceptados</string>
+    <string name="option4">No se debe usar el método</string>
+    
+    
+
+
+
+
+
+
+
+
+</resources>
