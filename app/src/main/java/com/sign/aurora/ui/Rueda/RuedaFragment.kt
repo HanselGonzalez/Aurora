@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AnimationUtils
+import android.widget.ImageButton
 import android.widget.Toast
 import com.sign.aurora.R
 import com.sign.aurora.databinding.FragmentRuedaBinding
@@ -60,7 +61,6 @@ class RuedaFragment : Fragment() {
     private fun buttonDialog() {
         binding.ivInformation2.setOnClickListener {
             zoomAnimation(binding.ivInformation2)
-
         }
     }
 
@@ -112,7 +112,7 @@ class RuedaFragment : Fragment() {
             }
 
             override fun onAnimationEnd(animation: Animator) {
-                dialogInformation.show()
+                openDialogInfo()
             }
 
             override fun onAnimationCancel(animation: Animator) {
@@ -175,6 +175,12 @@ class RuedaFragment : Fragment() {
 
         })
 
+    }
+
+    private fun openDialogInfo() {
+        val backButtonInfo = dialogInformation.findViewById<ImageButton>(R.id.btnBackDialogInfo)
+        backButtonInfo.setOnClickListener { dialogInformation.dismiss() }
+        dialogInformation.show()
     }
 
 

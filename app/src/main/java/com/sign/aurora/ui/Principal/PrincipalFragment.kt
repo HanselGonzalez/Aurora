@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import androidx.core.content.ContextCompat
 import com.sign.aurora.R
 import com.sign.aurora.databinding.FragmentPrincipalBinding
@@ -66,15 +68,16 @@ class PrincipalFragment : Fragment() {
         //Buttons
         binding.ivInformation.setOnClickListener {
             zoomAnimation(binding.ivInformation) {
-                dialogInformation.show()
+                openDialogInformation()
             }
         }
 
         binding.ivHelp.setOnClickListener {
             zoomAnimation(binding.ivHelp) {
-                dialogHelp.show()
+                openDialogHelp()
             }
         }
+
 
 
         var itemSelected = R.array.spHipertension
@@ -138,6 +141,18 @@ class PrincipalFragment : Fragment() {
 
     }
 
+    private fun openDialogInformation() {
+        val backButton = dialogInformation.findViewById<ImageButton>(R.id.btnBackDialogInfo)
+        backButton.setOnClickListener { dialogInformation.dismiss() }
+        dialogInformation.show()
+    }
+
+    private fun openDialogHelp() {
+        val backButtonHelp = dialogHelp.findViewById<ImageButton>(R.id.btnBackDialogHelp)
+        backButtonHelp.setOnClickListener { dialogHelp.dismiss() }
+        dialogHelp.show()
+    }
+
 
     private fun initDialogs() {
 
@@ -145,6 +160,7 @@ class PrincipalFragment : Fragment() {
             setContentView(R.layout.dialog_information)
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
+
 
         dialogHelp = Dialog(requireContext()).apply {
             setContentView(R.layout.dialog_help)

@@ -12,20 +12,18 @@
         android:layout_margin="30dp"
         app:cardBackgroundColor="@color/navBottomPrimary"
         app:cardCornerRadius="25dp"
-        app:cardElevation="20dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeWidth="0dp">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/background"
             android:padding="20dp">
-
 
 
         <ScrollView
@@ -42,18 +40,28 @@
 
 
 
+            <ImageButton
+                android:id="@+id/btnBackDialogHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/ic_back"
+                app:layout_constraintEnd_toStartOf="@id/tvTitle"
+                app:layout_constraintBottom_toTopOf="@id/cvLine"
+                />
+
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:text="@string/titleInformation"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/cvLine"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnBackDialogHelp"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
@@ -64,7 +72,8 @@
                 app:layout_constraintBottom_toTopOf="@id/tvMethod1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/btnBackDialogHelp"
+                android:layout_marginTop="2dp"
 
                 />
 

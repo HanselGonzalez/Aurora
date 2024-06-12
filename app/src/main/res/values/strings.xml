@@ -24,8 +24,8 @@
     <string name="method4">Implantes - LNG/ETG</string>
     <string name="method5">DIU liberador de levonorgestre - DIU-LNG</string>
     <string name="method6">DIU con cobre - DIU-Cu</string>
-    
-    
+
+
     <string-array name="spPatologia">
         <item>Hipertensión</item>
         <item>Obesidad</item>
@@ -157,14 +157,6 @@
     <string name="option2">En general, use el método</string>
     <string name="option3">El uso del método generalmente no se recomienda a menos que otros métodos más adecuados no estén disponibles o no sean aceptados</string>
     <string name="option4">No se debe usar el método</string>
-    
-    
-
-
-
-
-
-
 
 
 </resources>
