@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvInformation"
+        android:layout_width="340dp"
+        android:layout_height="300dp"
+        android:layout_margin="30dp"
+        app:cardBackgroundColor="@color/navBottomPrimary"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"
+            android:padding="20dp">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/titleInformation"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/cvLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLine"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/tvMethod1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+
+                />
+
+            <TextView
+                android:id="@+id/tvMethod1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+
+                android:gravity="fill_horizontal"
+                android:text="@string/option1"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/tvMethod2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivMethod1"
+                app:layout_constraintTop_toBottomOf="@id/cvLine"
+                tools:text="Use el método en cualquier circunstancia" />
+
+            <ImageView
+                android:id="@+id/ivMethod1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_num"
+                app:layout_constraintBottom_toBottomOf="@id/tvMethod1"
+                app:layout_constraintEnd_toStartOf="@id/tvMethod1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvMethod1" />
+
+
+            <TextView
+                android:id="@+id/tvMethod2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:gravity="fill_horizontal"
+                android:text="@string/option2"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/tvMethod3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivMethod2"
+                app:layout_constraintTop_toBottomOf="@id/tvMethod1" />
+
+            <ImageView
+                android:id="@+id/ivMethod2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_num2"
+                app:layout_constraintBottom_toBottomOf="@id/tvMethod2"
+                app:layout_constraintEnd_toStartOf="@id/tvMethod2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvMethod2" />
+
+
+            <TextView
+                android:id="@+id/tvMethod3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="fill_horizontal"
+                android:text="@string/option3"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvMethod4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivMethod3"
+                app:layout_constraintTop_toBottomOf="@id/tvMethod2" />
+
+            <ImageView
+                android:id="@+id/ivMethod3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_num3"
+                app:layout_constraintBottom_toBottomOf="@id/tvMethod3"
+                app:layout_constraintEnd_toStartOf="@id/tvMethod3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvMethod3" />
+
+
+            <TextView
+                android:id="@+id/tvMethod4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="fill_horizontal"
+                android:text="@string/option4"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivMethod4"
+                app:layout_constraintTop_toBottomOf="@id/tvMethod3" />
+
+            <ImageView
+                android:id="@+id/ivMethod4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_num4"
+                app:layout_constraintBottom_toBottomOf="@id/tvMethod4"
+                app:layout_constraintEnd_toStartOf="@id/tvMethod4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvMethod4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

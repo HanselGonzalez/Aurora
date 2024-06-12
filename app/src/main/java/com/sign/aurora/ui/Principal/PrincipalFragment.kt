@@ -1,24 +1,37 @@
 package com.sign.aurora.ui.Principal
 
+import android.animation.Animator
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import com.sign.aurora.R
 import com.sign.aurora.databinding.FragmentPrincipalBinding
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class PrincipalFragment : Fragment() {
 
 
     private var _binding: FragmentPrincipalBinding? = null
     private val binding get() = _binding!!
+
+    //DIALOGS
+    private lateinit var dialogInformation: Dialog
+    private lateinit var dialogHelp: Dialog
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,11 +49,34 @@ class PrincipalFragment : Fragment() {
     }
 
     private fun initUI() {
+        initMessage()
         initListeners()
+
 
     }
 
+    private fun initMessage() {
+        updateMessage()
+    }
+
     private fun initListeners() {
+        initDialogs()
+
+
+        //Buttons
+        binding.ivInformation.setOnClickListener {
+            zoomAnimation(binding.ivInformation) {
+                dialogInformation.show()
+            }
+        }
+
+        binding.ivHelp.setOnClickListener {
+            zoomAnimation(binding.ivHelp) {
+                dialogHelp.show()
+            }
+        }
+
+
         var itemSelected = R.array.spHipertension
 
 
@@ -90,13 +126,29 @@ class PrincipalFragment : Fragment() {
                 }
 
                 updateSpAnti(itemSelected)
-                Log.i("asdas","asdasdja")
+                Log.i("asdas", "asdasdja")
 
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
 
+        }
+
+
+    }
+
+
+    private fun initDialogs() {
+
+        dialogInformation = Dialog(requireContext()).apply {
+            setContentView(R.layout.dialog_information)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        }
+
+        dialogHelp = Dialog(requireContext()).apply {
+            setContentView(R.layout.dialog_help)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
 
 
@@ -578,6 +630,12 @@ class PrincipalFragment : Fragment() {
         drawNum6: Int
     ) {
 
+        zoomAnimationNum(binding.ivNum1)
+        zoomAnimationNum(binding.ivNum2)
+        zoomAnimationNum(binding.ivNum3)
+        zoomAnimationNum(binding.ivNum4)
+        zoomAnimationNum(binding.ivNum5)
+        zoomAnimationNum(binding.ivNum6)
 
         binding.ivNum1.background = ContextCompat.getDrawable(requireContext(), drawNum1)
         binding.ivNum2.background = ContextCompat.getDrawable(requireContext(), drawNum2)
@@ -585,6 +643,82 @@ class PrincipalFragment : Fragment() {
         binding.ivNum4.background = ContextCompat.getDrawable(requireContext(), drawNum4)
         binding.ivNum5.background = ContextCompat.getDrawable(requireContext(), drawNum5)
         binding.ivNum6.background = ContextCompat.getDrawable(requireContext(), drawNum6)
+    }
+
+
+    private fun zoomAnimation(view: View, doEndAnimation: () -> Unit) {
+        val scaleX = ObjectAnimator.ofFloat(view, "scaleX", 1.0f, 1.1f, 1.0f)
+        val scaleY = ObjectAnimator.ofFloat(view, "scaleY", 1.0f, 1.1f, 1.0f)
+
+        scaleX.duration = 300
+        scaleY.duration = 300
+
+        val animatorSet = AnimatorSet()
+        animatorSet.playTogether(scaleX, scaleY)
+        animatorSet.start()
+
+
+        animatorSet.addListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator) {
+            }
+
+            override fun onAnimationEnd(animation: Animator) {
+                doEndAnimation()
+            }
+
+            override fun onAnimationCancel(animation: Animator) {
+            }
+
+            override fun onAnimationRepeat(animation: Animator) {
+            }
+
+        })
+    }
+
+
+    private fun zoomAnimationNum(view: View) {
+        val scaleX = ObjectAnimator.ofFloat(view, "scaleX", 1.0f, 1.1f, 1.0f)
+        val scaleY = ObjectAnimator.ofFloat(view, "scaleY", 1.0f, 1.1f, 1.0f)
+
+        scaleX.duration = 300
+        scaleY.duration = 300
+
+        val animatorSet = AnimatorSet()
+        animatorSet.playTogether(scaleX, scaleY)
+        animatorSet.start()
+
+
+        animatorSet.addListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator) {
+            }
+
+            override fun onAnimationEnd(animation: Animator) {
+            }
+
+            override fun onAnimationCancel(animation: Animator) {
+            }
+
+            override fun onAnimationRepeat(animation: Animator) {
+            }
+
+        })
+    }
+
+
+    private fun updateMessage() {
+
+        val date = Date()
+        val dateFormat = SimpleDateFormat("HH", Locale.getDefault())
+        val isDayTime = dateFormat.format(date).toInt()
+        Log.i("hora","$dateFormat, ${dateFormat.format(date)} $date")
+
+        if(isDayTime >= 12){
+            binding.tvMessage.text = "Buenas Tardes"
+        }else{
+            binding.tvMessage.text = "Buenos Dias"
+        }
+
+
     }
 
 

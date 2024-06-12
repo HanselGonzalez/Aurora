@@ -5,6 +5,15 @@
     <string name="principal">Principal</string>
     <string name="rueda">Rueda Interactiva</string>
 
+    //Dialogs
+    <string name="titleInformation">Metodos de Elegibilidad</string>
+    <string name="titleHelp">Informacion Importante</string>
+
+    //Dialog Help
+    <string name="contentPrimary">Esta aplicación es una herramienta independiente para la planificación familiar, desarrollada sin respaldo oficial. Es crucial que verifique toda la información proporcionada aquí con documentación oficial y consulte a profesionales de salud calificados antes de tomar decisiones basadas en esta aplicación. Parte de la información ha sido obtenida de fuentes confiables en salud pública.</string>
+    <string name="contentSecondary">Estos métodos no protegen contra la transmisión de ITS/VIH. Si existe riesgo de ITS/VIH, se recomienda el uso correcto y sistemático de preservativos, masculinos o femeninos.</string>
+
+
     //Principal
     <string name="welcome">Buenos Dias Dr.</string>
     <string name="patologia">Seleccione la patologia</string>

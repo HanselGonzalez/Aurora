@@ -5,24 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvInformation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="340dp"
+        android:layout_height="400dp"
         android:layout_margin="30dp"
         app:cardBackgroundColor="@color/navBottomPrimary"
         app:cardCornerRadius="25dp"
         app:cardElevation="20dp"
+        app:strokeWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/background"
             android:padding="20dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+
+
+
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -36,7 +59,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Informacion Importante" />
+                android:text="@string/titleHelp"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvLine"
@@ -62,8 +85,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvLine"
                 app:layout_constraintBottom_toTopOf="@id/cvLine2"
-
-                tools:text="Esta aplicación es una herramienta independiente para la planificación familiar, desarrollada sin respaldo oficial. Es crucial que verifique toda la información proporcionada aquí con documentación oficial y consulte a profesionales de salud calificados antes de tomar decisiones basadas en esta aplicación. Parte de la información ha sido obtenida de fuentes confiables en salud pública."
+                android:text="@string/contentPrimary"
 
                 />
 
@@ -92,11 +114,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvLine2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:text="Estos métodos no protegen contra la transmisión de ITS/VIH. Si existe riesgo
-de ITS/VIH, se recomienda el uso correcto y sistemático de preservativos,
-masculinos o femeninos."
+                android:text="@string/contentSecondary"
 
                 />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
