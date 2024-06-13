@@ -284,7 +284,9 @@
             app:layout_constraintBottom_toBottomOf="@id/ivInformation2"
             app:layout_constraintEnd_toStartOf="@id/ivInformation2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/ivInformation2" />
+            app:layout_constraintTop_toTopOf="@id/ivInformation2"
+            android:contentDescription="@string/arrowLeftDisplacement"
+            />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ivInformation2"
@@ -295,6 +297,7 @@
             app:layout_constraintEnd_toStartOf="@id/ivArrowRigh"
             app:layout_constraintStart_toEndOf="@id/ivArrowLeft"
             app:layout_constraintTop_toTopOf="@id/ivArrowRigh"
+            android:contentDescription="@string/contentButtonInfo"
 
 
             />
@@ -310,6 +313,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivInformation2"
             app:layout_constraintTop_toBottomOf="@id/cvMethod4"
+            android:contentDescription="@string/arrowRightDisplacement"
 
             />
 

@@ -28,6 +28,8 @@
 
     <color name="navBottomPrimary">#F4F4F4</color>
     <color name="statusBar">#0A2073</color>
+    <color name="splashBackground">#0B81FF</color>
+    <color name="controlButton">#DFDEDE</color>
 
 
     <color name="transparent">#00025697</color>

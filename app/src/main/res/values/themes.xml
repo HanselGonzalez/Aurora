@@ -4,6 +4,7 @@
 
         <item name="fontFamily">@font/outfitregular</item>
         <item name="android:statusBarColor">@color/statusBar</item>
+        <item name="android:navigationBarColor">@color/controlButton</item>
 
     </style>
 
@@ -23,5 +24,11 @@
         <item name="android:background">@drawable/border_toolbar</item>
     </style>
 
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splashBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.Aurora</item>
+    </style>
 
 </resources>

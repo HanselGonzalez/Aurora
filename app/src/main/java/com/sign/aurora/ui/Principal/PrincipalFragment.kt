@@ -17,6 +17,12 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import androidx.core.content.ContextCompat
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.sign.aurora.R
 import com.sign.aurora.databinding.FragmentPrincipalBinding
 import java.text.SimpleDateFormat
@@ -33,6 +39,15 @@ class PrincipalFragment : Fragment() {
     //DIALOGS
     private lateinit var dialogInformation: Dialog
     private lateinit var dialogHelp: Dialog
+
+    //ADS
+    private var adCount = 0
+    private var interstitial:InterstitialAd? = null
+
+
+
+
+
 
 
     override fun onCreateView(
@@ -52,10 +67,39 @@ class PrincipalFragment : Fragment() {
 
     private fun initUI() {
         initMessage()
+        initAds()
         initListeners()
 
 
     }
+
+    private fun initAds() {
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(requireContext(), getString(R.string.ADMOB_ID_ADS), adRequest, object : InterstitialAdLoadCallback(){
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                interstitial = interstitialAd
+            }
+
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                interstitial = null
+            }
+
+        })
+    }
+
+    private fun checkCount(){
+        if(adCount == 5){
+            showAds()
+            adCount = 0
+            initAds()
+        }
+    }
+
+    private fun showAds(){
+        interstitial?.show(requireActivity())
+    }
+
 
     private fun initMessage() {
         updateMessage()
@@ -63,6 +107,22 @@ class PrincipalFragment : Fragment() {
 
     private fun initListeners() {
         initDialogs()
+
+
+        //AD
+        interstitial?.fullScreenContentCallback = object : FullScreenContentCallback(){
+            override fun onAdDismissedFullScreenContent() {
+            }
+
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                interstitial = null
+            }
+
+        }
+
 
 
         //Buttons
@@ -129,8 +189,8 @@ class PrincipalFragment : Fragment() {
                 }
 
                 updateSpAnti(itemSelected)
-                Log.i("asdas", "asdasdja")
-
+                adCount += 1
+                checkCount()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -726,14 +786,12 @@ class PrincipalFragment : Fragment() {
         val date = Date()
         val dateFormat = SimpleDateFormat("HH", Locale.getDefault())
         val isDayTime = dateFormat.format(date).toInt()
-        Log.i("hora","$dateFormat, ${dateFormat.format(date)} $date")
 
-        if(isDayTime >= 12){
-            binding.tvMessage.text = "Buenas Tardes"
-        }else{
-            binding.tvMessage.text = "Buenos Dias"
+        when(isDayTime){
+            in 0..11 -> binding.tvMessage.text = "Buenos Días"
+            in 12..18 -> binding.tvMessage.text = "Buenas Tardes"
+            in 19..23 -> binding.tvMessage.text = "Buenas Noches"
         }
-
 
     }
 

@@ -1,22 +1,23 @@
 package com.sign.aurora.ui.Rueda
 
 import android.animation.Animator
-import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.AnimationUtils
 import android.widget.ImageButton
-import android.widget.Toast
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.sign.aurora.R
 import com.sign.aurora.databinding.FragmentRuedaBinding
 
@@ -25,6 +26,15 @@ class RuedaFragment : Fragment() {
     private var _binding: FragmentRuedaBinding? = null
     private val binding get() = _binding!!
     private lateinit var dialogInformation: Dialog
+
+    //ADS
+    private var adCount = 0
+    private var interstitial: InterstitialAd? = null
+
+
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,8 +53,40 @@ class RuedaFragment : Fragment() {
 
     private fun initUI() {
         initDialogs()
+        initAds()
         initListeners()
     }
+
+
+    private fun initAds() {
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(requireContext(), getString(R.string.ADMOB_ID_ADS), adRequest, object : InterstitialAdLoadCallback(){
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                interstitial = interstitialAd
+            }
+
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                interstitial = null
+            }
+
+        })
+    }
+
+
+    private fun checkCount(){
+        if(adCount == 14){
+            showAds()
+            adCount = 0
+            initAds()
+        }
+    }
+
+    private fun showAds(){
+        interstitial?.show(requireActivity())
+    }
+
+
 
     private fun initDialogs() {
         dialogInformation = Dialog(requireContext()).apply {
@@ -54,6 +96,20 @@ class RuedaFragment : Fragment() {
     }
 
     private fun initListeners() {
+        //AD
+        interstitial?.fullScreenContentCallback = object : FullScreenContentCallback(){
+            override fun onAdDismissedFullScreenContent() {
+            }
+
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                interstitial = null
+            }
+
+        }
+
         buttonDialog()
         buttonArrow()
     }
@@ -70,6 +126,8 @@ class RuedaFragment : Fragment() {
             disableButtonArrow()
 
             zoomAnimationArrow(binding.ivArrowLeft, binding.ivRuedaBehind)
+            adCount+=1
+            checkCount()
 
         }
 
@@ -78,8 +136,9 @@ class RuedaFragment : Fragment() {
         binding.ivArrowRigh.setOnClickListener {
 
             disableButtonArrow()
-
             zoomAnimationArrow(binding.ivArrowRigh, binding.ivRuedaBehind)
+            adCount+=1
+            checkCount()
 
         }
     }
@@ -165,6 +224,7 @@ class RuedaFragment : Fragment() {
 
             override fun onAnimationEnd(animation: Animator) {
                 enableButtonArrow()
+
             }
 
             override fun onAnimationCancel(animation: Animator) {

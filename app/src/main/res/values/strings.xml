@@ -13,11 +13,16 @@
     <string name="contentPrimary">Esta aplicación es una herramienta independiente para la planificación familiar, desarrollada sin respaldo oficial. Es crucial que verifique toda la información proporcionada aquí con documentación oficial y consulte a profesionales de salud calificados antes de tomar decisiones basadas en esta aplicación. Parte de la información ha sido obtenida de fuentes confiables en salud pública.</string>
     <string name="contentSecondary">Estos métodos no protegen contra la transmisión de ITS/VIH. Si existe riesgo de ITS/VIH, se recomienda el uso correcto y sistemático de preservativos, masculinos o femeninos.</string>
 
+    //ContentDescription
+    <string name="contentButtonInfo">Informacion Importante</string>
+    <string name="contentButtonHelp">Utilidades</string>
+    <string name="arrowRightDisplacement">Deslizar a la derecha la rueda</string>
+    <string name="arrowLeftDisplacement">Deslizar a la izquierda la rueda</string>
 
     //Principal
     <string name="welcome">Buenos Dias Dr.</string>
-    <string name="patologia">Seleccione la patologia</string>
-    <string name="metodos">Seleccione el metodo anticonceptivo</string>
+    <string name="patologia">Seleccione la patología</string>
+    <string name="metodos">Seleccione la subpatología</string>
     <string name="method1">Anticonceptivos hormonales combinados - Píldora, parche, anillo, inyectable (AOC, PAC, AVC, AIC)</string>
     <string name="method2">Anticonceptivos orales con progestágeno solo - AOPS</string>
     <string name="method3">Anticonceptivos inyectables con progestágeno solo - AMPD (IM, SC)/EN-NET</string>

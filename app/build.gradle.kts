@@ -19,14 +19,36 @@ android {
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+
+        getByName("release"){
+            isMinifyEnabled = true
+            isShrinkResources = true
+            isDebuggable = false
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            resValue("string","auroraname","Aurora")
+            resValue("string","ADMOB_ID_MANIFEST","ca-app-pub-1256986380476629~5673668238")
+            resValue("string","ADMOB_ID_ADS","ca-app-pub-1256986380476629/2283133850")
+
         }
+
+        getByName("debug"){
+            isDebuggable = true
+
+            resValue("string","auroraname","[DEBUG] Aurora")
+            resValue("string","ADMOB_ID_MANIFEST","ca-app-pub-3940256099942544~3347511713")
+            resValue("string","ADMOB_ID_ADS","ca-app-pub-3940256099942544/1033173712")
+
+
+        }
+
     }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -38,6 +60,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
 
@@ -54,10 +77,13 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     //Splash
-    implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
+    implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    //ADS
+    implementation("com.google.android.gms:play-services-ads:23.1.0")
+
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
