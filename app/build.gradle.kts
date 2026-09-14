@@ -1,3 +1,13 @@
+import java.io.FileInputStream
+import java.util.Properties
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
+}
+
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -31,9 +41,13 @@ android {
             )
 
             resValue("string","auroraname","Aurora")
-            resValue("string","ADMOB_ID_MANIFEST","ca-app-pub-1256986380476629~5673668238")
-            resValue("string","ADMOB_ID_ADS","ca-app-pub-1256986380476629/2283133850")
 
+            // Usar las variables en lugar de los strings directos
+            val admobManifest = localProperties.getProperty("ADMOB_AURORA_MANIFEST") ?: ""
+            val admobAds = localProperties.getProperty("ADMOB_AURORA_ADS") ?: ""
+
+            resValue("string","ADMOB_ID_MANIFEST", admobManifest)
+            resValue("string","ADMOB_ID_ADS", admobAds)
         }
 
         getByName("debug"){
