@@ -12,6 +12,8 @@ Basada en directrices médicas estandarizadas, la aplicación evalúa qué méto
 * **Diseño Intuitivo y Accesible:** Interfaz limpia pensada para consultas rápidas en entornos clínicos.
 
 
-<img width="720" height="1600" alt="Telefono 3" src="https://github.com/user-attachments/assets/71f5abae-2c97-4d36-be4b-95c6b6a3f9c9" />
-<img width="720" height="<img width="720" height="1600" alt="Telefono 1" src="https://github.com/user-attachments/assets/7d516cdf-5281-4882-8872-3363288b59b9" />
-1600" alt="Telefono 2" src="https://github.com/user-attachments/assets/b4f116be-c349-4c62-85ab-d79556051655" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7d516cdf-5281-4882-8872-3363288b59b9" width="220" alt="Telefono 1" />
+  <img src="https://github.com/user-attachments/assets/e190f1fe-4dda-406b-b339-cf3bed5ce196" width="220" alt="Telefono 2" />
+  <img src="https://github.com/user-attachments/assets/71f5abae-2c97-4d36-be4b-95c6b6a3f9c9" width="220" alt="Telefono 3" />
+</p>
